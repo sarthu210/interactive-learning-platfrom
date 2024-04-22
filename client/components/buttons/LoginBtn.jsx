@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function LoginBtn() {
+export default function LoginBtn() {
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
   return !isAuthenticated ?  (
@@ -12,4 +12,3 @@ function LoginBtn() {
   ) : null;
 }
 
-export default LoginBtn;

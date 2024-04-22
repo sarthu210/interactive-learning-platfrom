@@ -8,8 +8,10 @@ import login from "./routes/login.js";
 import logout from "./routes/logout.js";
 import user from "./routes/getUser.js";
 import enroll from "./routes/enroll.js";
+import getCourseInfo from "./routes/getCourseInfo.js";
 import "./database/connection.js";
 import "./middleware/passport.js";
+
 
 const app = express();
 const port = 3000;
@@ -43,6 +45,7 @@ app.use('/auth', login);
 app.use('/auth', logout);
 app.use('/auth', user);
 app.use('/course', enroll);
+app.use('/course', getCourseInfo);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

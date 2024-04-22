@@ -1,7 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 export default function (props) {
+
+    const isEnroll = useSelector(state => state.course.isEnroll);
+    
   return (
     <div>
         <div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function RegisterBtn() {
+export default function RegisterBtn() {
 
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
 
@@ -13,4 +13,3 @@ function RegisterBtn() {
   ) : null;
 }
 
-export default RegisterBtn;

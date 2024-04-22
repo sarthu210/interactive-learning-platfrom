@@ -9,6 +9,7 @@ import HomePage from "../pages/HomePage.jsx"
 import RegisterPage from "../pages/RegisterPage.jsx"
 import LoginPage from "../pages/LoginPage.jsx"
 import CoursesPage from "../pages/CoursesPage.jsx"
+import JavaPage from "../pages/JavaPage.jsx" 
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: '/courses',
         element: <CoursesPage/>,
+      },
+      {
+        path: '/courses/java',
+        element: <JavaPage/>,
       }
     ]
   }

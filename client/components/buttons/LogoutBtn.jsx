@@ -3,7 +3,7 @@ import { logout as logoutAction } from '../../src/slices/authReducer'; // replac
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 
-function UserLogout() {
+export default function UserLogout() {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
   
@@ -34,4 +34,3 @@ function UserLogout() {
   ) : null;
 }
 
-export default UserLogout;
