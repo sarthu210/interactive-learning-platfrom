@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { enroll } from '../src/slices/courseReducer';
+import { set } from 'mongoose';
 
 
 export default function EnrollCours() {
@@ -11,13 +13,25 @@ export default function EnrollCours() {
         "courseId": "661bb5be99a39b4f0853b9ca"
     }
 
-    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
-    const isEnroll = useSelector(state => state.course.isEnroll);
+    const [loading, setLoading] = React.useState(false);
 
-    const enroll = async () => {
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+    let isEnroll = useSelector(state => state.course.isEnroll);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        if(isEnroll){
+            setLoading(true);
+        }
+    else{
+        setLoading(false);}
+    },[]);
+
+    const handleEnroll = async () => {
         try{
+            toast("Successfully Enrolled", {type: 'success', autoClose: 10000})
             await axios.post('http://localhost:3000/course/enroll', data, {withCredentials: true});
-            toast("Course Enrolled!");
+            dispatch(enroll({isEnroll: true}));
         }
         catch(err){
             console.log(err);
@@ -34,9 +48,9 @@ export default function EnrollCours() {
                 <p className='text-gray-400'>History, Data types, Condtional Statments, loops</p>
             </div>
             
-            { !isEnroll ? null : 
+            { loading || isEnroll || !isAuthenticated ? null : 
             <div className='flex justify-between items-center p-4 border-t border-gray-200'>
-                <button onClick={enroll} className='px-3 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded'>Enroll</button>
+                <button onClick={handleEnroll} className='px-3 py-1 bg-gray-800 text-white text-xs font-bold uppercase rounded'>Enroll</button>
                 <ToastContainer />
             </div>
             }

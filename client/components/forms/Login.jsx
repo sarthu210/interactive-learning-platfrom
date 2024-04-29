@@ -36,8 +36,8 @@ export default function Login() {
     }
 
 return (
-    <div className='flex justify-evenly'>
-        <div className='w-1/2 m-10'>
+    <div className='min-[1080px]:flex max-[750px]:flex-wrap lg:flex-nowrap flex-row justify-evenly border rounded-lg'>
+        <div className='lg:w-1/2 lg:m-10'>
         <form onSubmit={handleSubmit(onSubmit)} className='login-form flex flex-col m-20 gap-2'>
         <h1 className="text-2xl font-bold mb-10 text-center ">Login</h1>
             <input
@@ -77,11 +77,19 @@ return (
             >
                 Login
             </button>
-            <p className='text-black'>If not register? <a href='/login' className='text-red-600'>login here</a></p>
+            <p className='text-black'>If not register? <a href='/register' className='text-red-600'>register here</a></p>
         </form>
     </div>
-    <div className='w-full h-[600px] bg-[url("https://img.freepik.com/free-vector/education-pattern-background-doodle-style_53876-115365.jpg?t=st=1713775837~exp=1713779437~hmac=72bf3dcb763a239dd8fca895f4885fb896cc0feb92179b1a4d67af3e152cf523&w=740")]'>
+    <div className='w-full max-[750px]:hidden opacity-90 bg-black bg-opacity-50 bg-blend-overlay h-[600px] bg-[url("https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")]'>
+            <div className='m-10 flex flex-col gap-2'>
+                <h1 className=' text-white text-[55px]'>EduHub</h1>
+                <p className=' text-white text-[16px]'>Learn and grow with us 
+                Dedicated <br/> platform for learning <br/>
+                Get started today!
+                </p>
+            </div>
     </div>
+
     </div>
     
 )

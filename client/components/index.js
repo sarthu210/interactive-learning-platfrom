@@ -9,6 +9,10 @@ import EnrollCours from './EnrollCours'
 import NavBar from './NavBar'
 import Footer from './Fotter'
 import AuthLayout from './AuthLayout'
+import CourseContentCard from './CourseContentCard'
+import CodingSpace  from './CodingSpace'
+import TherorySpace from './TherorySpace'
+import CodeOutput from './CodeOutput'
 
 export 
 {
@@ -21,5 +25,9 @@ export
     NavBar,
     Footer,
     AuthLayout,
-    UserLogout
+    UserLogout,
+    CourseContentCard,
+    CodingSpace,
+    TherorySpace,
+    CodeOutput 
 }

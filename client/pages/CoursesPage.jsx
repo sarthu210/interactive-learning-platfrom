@@ -1,5 +1,6 @@
 import React from 'react'
 import { CourseCard } from '../components';
+import {CourseContentCard} from '../components';
 
 export default function CoursesPage() {
   return (

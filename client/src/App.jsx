@@ -15,7 +15,7 @@ export default function App() {
   React.useEffect(() => {
     axios.get("http://localhost:3000/auth/user", { withCredentials: true })
         .then((response) => {
-            dispatch(login(response.data))
+            dispatch(login(response.data)) 
         })
         .catch((error) => {
             if (error.response && error.response.status !== 401) {
