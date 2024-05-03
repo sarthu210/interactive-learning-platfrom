@@ -39,7 +39,7 @@ const router = createBrowserRouter([
         element: <JavaPage/>,
       },
       {
-        path: '/courses/java/:level',
+        path: '/courses/java/:levelId',
         element: <LevelPage/>,
       }
     ]

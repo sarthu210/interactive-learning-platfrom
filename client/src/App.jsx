@@ -8,9 +8,12 @@ import { Outlet } from 'react-router-dom'
 import { NavBar, Footer } from "../components/index"
 
 
+
 export default function App() {
   const [loading, setLoading] = React.useState(true);
   const dispatch = useDispatch();
+
+
 
   React.useEffect(() => {
     axios.get("http://localhost:3000/auth/user", { withCredentials: true })
@@ -41,6 +44,11 @@ React.useEffect(() => {
           setLoading(false)
       })
 }, []);
+
+
+
+
+
 
   return !loading ? (
     <div>

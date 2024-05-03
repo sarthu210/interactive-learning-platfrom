@@ -3,7 +3,7 @@ import React from 'react'
 export default function TherorySpace(props) {
   return (
     <>
-        <div className='bg-white flex flex-col overflow-hidden'>
+        <div className='bg-white flex flex-col h-[590px] overflow-y-auto sc'>
             <h1 className='text-2xl font-bold mb-10 text-center '>{props.title}</h1>
             <h2 className='text-xl font-bold mb-10 text-center '>{props.subtitle}</h2>
             <div className='p-4'>

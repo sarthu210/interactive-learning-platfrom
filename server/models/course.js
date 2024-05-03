@@ -3,7 +3,15 @@ import mongoose from "mongoose";
 const course  = new mongoose.Schema({
     name: {
         type: String,
-        require: true
+        require: false
+    },
+    total_levels: {
+        type: Number,
+        require: false
+    },
+    Levels: {
+        type: Array,
+        require: false
     },
 })
 

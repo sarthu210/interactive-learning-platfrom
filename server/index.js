@@ -3,12 +3,15 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import passport from "passport";
 import cors from "cors";
+import axios from "axios";
 import register from "./routes/register.js";
 import login from "./routes/login.js";
 import logout from "./routes/logout.js";
 import user from "./routes/getUser.js";
 import enroll from "./routes/enroll.js";
-import getCourseInfo from "./routes/getCourseInfo.js";
+import getEnrollInfo from "./routes/getEnrollInfo.js"
+import levelSubmit from "./routes/levelSubmit.js";
+import getLevels from "./routes/getLevels.js"
 import "./database/connection.js";
 import "./middleware/passport.js";
 
@@ -45,7 +48,9 @@ app.use('/auth', login);
 app.use('/auth', logout);
 app.use('/auth', user);
 app.use('/course', enroll);
-app.use('/course', getCourseInfo);
+app.use('/course', getEnrollInfo);
+app.use('/level', levelSubmit);
+app.use('/level', getLevels);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

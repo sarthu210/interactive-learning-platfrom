@@ -12,6 +12,22 @@ const enrolls = new mongoose.Schema({
     progress: {
         type: Number,
         default: 0
+    },
+    Total_Levels: {
+        type: Number,
+        default: 3
+    },
+    Level1:{
+        type: Boolean,
+        default: false
+    },
+    Level2:{
+        type: Boolean,
+        default: false
+    },
+    Level3:{
+        type: Boolean,
+        default: false
     }
 })
 
