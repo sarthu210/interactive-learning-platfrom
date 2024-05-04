@@ -26,7 +26,9 @@ export default function LevelPage() {
   
   return (
     <>
+    <a href='/courses/java'><button className='bg-black h-10 w-32 text-white'>Back</button></a>
         <div className='flex flex-wrap max-[750px]:flex max-[750px]:flex-col mt-5 max-[750px]:mb-10'>
+            
             <div className='w-[30%] max-[750px]:w-[100%] border-r-8'>
                 <TherorySpace title={data ? data.title : ''} subtitle={data ? data.subtitle : ''}  theroyp1={data? data.theroy.p1 : ''} theroyp2={data? data.theroy.p2 : ''} theroyp3={data? data.theroy.p3 : ''} />
             </div> 

@@ -4,7 +4,6 @@ async function getLevels(req, res) {
     
         try{
             const levelId = req.params.levelId;
-            console.log(levelId);
             const levels = await Level.findById(levelId);
             res.status(200).send(levels);
         } catch (error) {

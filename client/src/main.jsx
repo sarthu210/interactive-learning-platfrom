@@ -11,6 +11,7 @@ import LoginPage from "../pages/LoginPage.jsx"
 import CoursesPage from "../pages/CoursesPage.jsx"
 import JavaPage from "../pages/JavaPage.jsx" 
 import LevelPage from '../pages/LevelPage.jsx';
+import ProfilePage from '../pages/ProfilePage.jsx';
 import "../userWorker"
 
 const router = createBrowserRouter([
@@ -40,7 +41,11 @@ const router = createBrowserRouter([
       },
       {
         path: '/courses/java/:levelId',
-        element: <LevelPage/>,
+        element: <AuthLayout authentication={true}><LevelPage /></AuthLayout>,
+      },
+      {
+        path: '/profile',
+        element: <AuthLayout authentication={true}><ProfilePage /></AuthLayout>,
       }
     ]
   }

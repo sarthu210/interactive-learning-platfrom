@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { LoginBtn, UserLogout, RegisterBtn } from './index';
+import { LoginBtn, UserLogout, RegisterBtn, ProfileBtn } from './index';
 
 
 export default function NavBar() {
@@ -29,6 +29,7 @@ export default function NavBar() {
           <a href="/courses" className='block mt-4 lg:inline-block lg:mt-0 text-black mr-4'>Courses</a>
           <LoginBtn className="mr-4" />
           <RegisterBtn />
+          <a href='/profile'><ProfileBtn /></a>
           <UserLogout />
         </div>
       </div>

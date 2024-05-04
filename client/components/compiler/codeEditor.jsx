@@ -1,6 +1,11 @@
+import React from "react";
+import { useEffect } from "react";
 import { useRef, useState } from "react";
 import { Box, HStack } from "@chakra-ui/react";
 import { Editor } from "@monaco-editor/react";
+import { setInput } from "../../src/slices/inputReducer";
+import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import LanguageSelector from "./LanguageSelector";
 import { CODE_SNIPPETS } from "../constants";
 import Output from "./OutPut";
@@ -9,6 +14,9 @@ const CodeEditor = () => {
   const editorRef = useRef();
   const [value, setValue] = useState("");
   const [language, setLanguage] = useState("java");
+
+  const output = useSelector((state) => state.output.output);
+
 
   const onMount = (editor) => {
     editorRef.current = editor;
@@ -19,6 +27,7 @@ const CodeEditor = () => {
     setLanguage(language);
     setValue(CODE_SNIPPETS[language]);
   };
+
 
   return (
     <Box>

@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { enroll } from '../src/slices/courseReducer';
-import { set } from 'mongoose';
+
 
 
 export default function EnrollCours() {
@@ -29,7 +29,7 @@ export default function EnrollCours() {
 
     const handleEnroll = async () => {
         try{
-            toast("Successfully Enrolled", {type: 'success', autoClose: 10000})
+            toast("Successfully Enrolled")
             await axios.post('http://localhost:3000/course/enroll', data, {withCredentials: true});
             dispatch(enroll({isEnroll: true}));
         }

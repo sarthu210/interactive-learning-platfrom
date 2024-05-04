@@ -1,3 +1,4 @@
+import { enroll } from "../../client/src/slices/courseReducer.js";
 import Enroll from "../models/enrolls.js";
 
 async function getEnrolls(req,res){
@@ -11,6 +12,7 @@ async function getEnrolls(req,res){
                 const firstEnroll = info[0]; // get the first item in the info array
                 res.status(200).json({
                     message: "Success",  
+                    enrollId: firstEnroll._id,
                     progress: firstEnroll.progress,
                     Total_Levels: firstEnroll.Total_Levels,
                     Level1 : firstEnroll.Level1,

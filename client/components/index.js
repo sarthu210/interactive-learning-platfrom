@@ -12,6 +12,8 @@ import AuthLayout from './AuthLayout'
 import CourseContentCard from './CourseContentCard'
 import CodeEditor from './compiler/codeEditor'
 import TherorySpace from './compiler/TherorySpace'
+import ProfileBtn from './buttons/ProfileBtn'
+import UserProfile from './UserProfile'
 
 export 
 {
@@ -28,4 +30,6 @@ export
     CourseContentCard,
     CodeEditor,
     TherorySpace,
+    ProfileBtn,
+    UserProfile
 }
