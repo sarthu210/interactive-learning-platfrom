@@ -5,8 +5,6 @@ import {useForm} from 'react-hook-form';
 import {useDispatch, useSelector} from 'react-redux';
 import {useNavigate} from 'react-router-dom';
 
-
-
 export default function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -15,6 +13,11 @@ export default function Login() {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated); // replace with your actual selector
 
     const [error , setError] = React.useState("");
+
+    function gotoRegister()
+    {
+        navigate('/register');
+    }
     
     React.useEffect(() => {
         if (isAuthenticated) {
@@ -41,7 +44,7 @@ export default function Login() {
 return (
     <div className='min-[1080px]:flex max-[750px]:flex-wrap lg:flex-nowrap flex-row justify-evenly border rounded-lg'>
         <div className='lg:w-1/2 lg:m-10'>
-        <form onSubmit={handleSubmit(onSubmit)} className='login-form flex flex-col m-20 gap-2'>
+        <form onSubmit={handleSubmit(onSubmit)} className='login-form flex flex-col m-10 gap-2'>
         <h1 className="text-2xl font-bold mb-10 text-center ">Login</h1>
             <input
                 type="email"
@@ -80,7 +83,7 @@ return (
             >
                 Login
             </button>
-            <p className='text-black'>If not register? <a href='/register' className='text-red-600'>register here</a></p>
+            <p className='text-black'>If not register? <a onClick={gotoRegister} className='text-red-600 cursor-pointer'>register here</a></p>
         </form>
     </div>
     <div className='w-full max-[750px]:hidden opacity-90 bg-black bg-opacity-50 bg-blend-overlay h-[600px] bg-[url("https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80")]'>

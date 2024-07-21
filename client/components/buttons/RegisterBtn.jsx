@@ -8,7 +8,7 @@ export default function RegisterBtn() {
 
   return !isAuthenticated ?  (
     <Link to="/register">
-      <button>Register</button>
+      <button className='mr-4 mt-4 border-[1px] rounded-lg hover:bg-black hover:text-white border-black p-3 px-5'>Register</button>
     </Link>
   ) : null;
 }
