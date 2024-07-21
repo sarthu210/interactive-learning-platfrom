@@ -25,3 +25,7 @@ dist-ssr
 
 # Ignore environment variables file
 config/.env
+
+.env
+env
+.vercel

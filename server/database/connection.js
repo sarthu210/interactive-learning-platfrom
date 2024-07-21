@@ -7,7 +7,7 @@ import mongoose from 'mongoose';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Load environment variables from .env file in the config folder
-const envPath = join(__dirname, '..', 'config', '.env');
+const envPath = join(__dirname, '..', '.env');
 dotenvConfig({ path: envPath });
 
 // MongoDB connection URI
