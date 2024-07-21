@@ -4,11 +4,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { enroll } from '../src/slices/courseReducer';
-
-
+import { useNavigate } from 'react-router-dom';
 
 export default function EnrollCours() {
-    
+    const navigate = useNavigate();
     const data = {
         "courseId": "661bb5be99a39b4f0853b9ca"
     }
@@ -18,6 +17,11 @@ export default function EnrollCours() {
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     let isEnroll = useSelector(state => state.course.isEnroll);
     const dispatch = useDispatch();
+
+    function gotoLogin()
+    {
+        navigate('/login');
+    }
 
     useEffect(() => {
         if(isEnroll){
@@ -55,7 +59,7 @@ export default function EnrollCours() {
             </div>
             }
             {
-                isAuthenticated ? null : <div className='bg-gray-100 text-sm text-center p-2'>Please login to enroll in this course <a href='/login' className=' text-red-600 underline'>login here</a></div> 
+                isAuthenticated ? null : <div className='bg-gray-100 text-sm text-center p-2'>Please login to enroll in this course <a onClick={gotoLogin} className='cursor-pointer text-red-600 underline'>login here</a></div> 
             }
         </div>
     </div>

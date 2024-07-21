@@ -17,7 +17,7 @@ export default function NavBar() {
 
   return (
 
-    <nav className='flex items-center flex-wrap bg-[#f8f9fa] p-6 justify-around'>
+    <nav className='flex items-center flex-wrap bg-[#f8f9fa] p-6 justify-between'>
       <div className='flex items-center flex-shrink-0 text-black mr-6'>
         <a href="/" className='font-semibold text-xl tracking-tight'>EduHub</a>
       </div>
@@ -32,11 +32,11 @@ export default function NavBar() {
   }
 </button>
       </div>
-      <div className={`w-full block flex-grow lg:flex lg:items-center lg:w-auto ${isOpen ? '' : 'hidden'}`}>
+      <div className={`w-full  flex lg:flex lg:items-center lg:w-auto ${isOpen ? '' : 'hidden'}`}>
         <div className='text-sm lg:flex-grow '>
           <button className='block mt-4 lg:inline-block lg:mt-0 text-black mr-4' onClick={gotoHome}>Home</button>
           <button className='block mt-4 lg:inline-block lg:mt-0 text-black mr-4' onClick={gotoCourses}>Courses</button>
-          <LoginBtn className="mr-4" />
+          <LoginBtn className="mr-4 mt-4" />
           <RegisterBtn />
           <ProfileBtn />
           <UserLogout />
