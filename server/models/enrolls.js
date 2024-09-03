@@ -13,9 +13,9 @@ const enrolls = new mongoose.Schema({
         type: Number,
         default: 0
     },
-    Total_Levels: {
+    Total_Levels_And_Quize: {
         type: Number,
-        default: 3
+        default: 6
     },
     Level1:{
         type: Boolean,
@@ -26,6 +26,18 @@ const enrolls = new mongoose.Schema({
         default: false
     },
     Level3:{
+        type: Boolean,
+        default: false
+    },
+    Quize1:{
+        type: Boolean,
+        default: false
+    },
+    Quize2:{
+        type: Boolean,
+        default: false
+    },
+    Quize3:{
         type: Boolean,
         default: false
     }

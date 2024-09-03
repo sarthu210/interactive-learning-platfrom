@@ -13,8 +13,6 @@ export default function App() {
   const [loading, setLoading] = React.useState(true);
   const dispatch = useDispatch();
 
-
-
   React.useEffect(() => {
     axios.get("http://localhost:3000/auth/user", { withCredentials: true })
         .then((response) => {

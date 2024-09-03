@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
+    "@google/generative-ai": "^0.17.1",
     "@monaco-editor/react": "^4.6.0",
+    "@ramonak/react-progress-bar": "^5.2.0",
     "@reduxjs/toolkit": "^2.2.3",
     "axios": "^1.6.8",
     "lodash": "^4.17.21",

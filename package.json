@@ -1,0 +1,14 @@
+{
+  "name": "vyoma-samskrta-pathashala",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd frontend && npm run dev",
+    "start:backend": "cd backend && node index.js",
+    "build": "cd frontend && npm install && npm run build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

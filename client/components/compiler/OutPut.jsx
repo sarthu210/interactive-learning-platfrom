@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { submit } from "../../src/slices/submitReducer";
 import axios from "axios";
 import _ from 'lodash';
+import { progress } from "framer-motion";
 
 const Output = ({ editorRef, language }) => {
   const [output, setOutput] = useState(null);
@@ -96,14 +97,13 @@ async function handleClick(){
 
   }, [level]); 
 
-  
 
   async function submitCode() {
     try{
       if(checkCode && checkOutput){
         await axios.post(`http://localhost:3000/level/submit`, {
           enrollId: course.enrollId,
-          level: level.name
+          level: level.name,
         }).then((response) => {
           console.log(response);
         });
@@ -113,7 +113,7 @@ async function handleClick(){
       else if(level.excersice === "null"){
         await axios.post(`http://localhost:3000/level/submit`, {
           enrollId: course.enrollId,
-          level: level.name
+          level: level.name,
         }).then((response) => {
           console.log(response);
         });

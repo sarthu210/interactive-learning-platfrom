@@ -12,6 +12,7 @@ import CoursesPage from "../pages/CoursesPage.jsx"
 import JavaPage from "../pages/JavaPage.jsx" 
 import LevelPage from '../pages/LevelPage.jsx';
 import ProfilePage from '../pages/ProfilePage.jsx';
+import QuizePage from '../pages/QuizePage.jsx';
 import "../userWorker"
 
 const router = createBrowserRouter([
@@ -44,9 +45,14 @@ const router = createBrowserRouter([
         element: <AuthLayout authentication={true}><LevelPage /></AuthLayout>,
       },
       {
+        path: '/courses/java/quize/:quizeId',
+        element: <AuthLayout authentication={true}><QuizePage/></AuthLayout>,
+      },
+      {
         path: '/profile',
         element: <AuthLayout authentication={true}><ProfilePage /></AuthLayout>,
-      }
+      },
+
     ]
   }
 

@@ -14,6 +14,7 @@ import CodeEditor from './compiler/codeEditor'
 import TherorySpace from './compiler/TherorySpace'
 import ProfileBtn from './buttons/ProfileBtn'
 import UserProfile from './UserProfile'
+import Quize from './Quize'
 
 export 
 {
@@ -31,5 +32,6 @@ export
     CodeEditor,
     TherorySpace,
     ProfileBtn,
-    UserProfile
+    UserProfile,
+    Quize
 }

@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { resetStateAction } from './action';
+import { unenroll } from '../../src/slices/courseReducer';
 
 export default function UserLogout() {
   const dispatch = useDispatch();
@@ -21,8 +22,7 @@ export default function UserLogout() {
        // Dispatch the reset state action
       dispatch(resetStateAction());
 
-      // Clear local storage
-      localStorage.clear();
+      dispatch(unenroll());
 
       // Clear cookies
       document.cookie.split(";").forEach((c) => {

@@ -2,9 +2,12 @@ import React, { useEffect } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
+import ProgressBar from "@ramonak/react-progress-bar";
 import { useSelector, useDispatch } from 'react-redux';
 import { enroll } from '../src/slices/courseReducer';
 import { useNavigate } from 'react-router-dom';
+import { color } from 'framer-motion';
+import { round } from 'lodash';
 
 export default function EnrollCours() {
     const navigate = useNavigate();
@@ -16,6 +19,7 @@ export default function EnrollCours() {
 
     const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
     let isEnroll = useSelector(state => state.course.isEnroll);
+    let progress = useSelector((state) => state?.course?.name?.progress || 0);
     const dispatch = useDispatch();
 
     function gotoLogin()
@@ -44,12 +48,14 @@ export default function EnrollCours() {
 
   return (
     <div>
+        
         <div className='bg-white shadow-md rounded-lg overflow-hidden'>
             <div className='bg-cover bg-center h-56 p-4' style={{backgroundImage: 'url("https://www.sipexe.com/assets/courses/Java.jpg")'}}></div>
             <div className='p-4'>
                 <p className='font-semibold text-gray-600 text-sm'>Coding</p>
                 <p className='text-2xl text-gray-800'>Basic JAVA</p>
                 <p className='text-gray-400'>History, Data types, Condtional Statments, loops</p>
+                {isAuthenticated ? <ProgressBar className='mt-5' maxCompleted={90} animateOnRender='true' bgColor='black' completed={((progress*90)/3)}></ProgressBar> : null}
             </div>
             
             { loading || isEnroll || !isAuthenticated ? null : 
@@ -61,6 +67,7 @@ export default function EnrollCours() {
             {
                 isAuthenticated ? null : <div className='bg-gray-100 text-sm text-center p-2'>Please login to enroll in this course <a onClick={gotoLogin} className='cursor-pointer text-red-600 underline'>login here</a></div> 
             }
+            
         </div>
     </div>
   )
