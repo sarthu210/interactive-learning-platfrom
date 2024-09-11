@@ -12,7 +12,7 @@ export default function LevelPage() {
   const dispatch = useDispatch();
 
   useEffect (() => {
-    axios.get(`http://backend-woad-sigma.vercel.app/level/${levelId}`, { withCredentials: true })
+    axios.get(`https://backend-woad-sigma.vercel.app/level/${levelId}`, { withCredentials: true })
     .then((response) => {
       dispatch(setLevel(response.data))
     })

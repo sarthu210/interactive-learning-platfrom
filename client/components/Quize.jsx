@@ -19,7 +19,7 @@ export default function Quize(props){
         setLoading(true);
         try {
             // Simulate data fetching
-            const response = await axios.post('http://backend-woad-sigma.vercel.app/api/generate-quize', { name: props.level }, {withCredentials: true});
+            const response = await axios.post('https://backend-woad-sigma.vercel.app/api/generate-quize', { name: props.level }, {withCredentials: true});
             setQuizData(response.data);
         } catch (error) {
             console.error(error);
