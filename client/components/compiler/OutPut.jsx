@@ -101,7 +101,7 @@ async function handleClick(){
   async function submitCode() {
     try{
       if(checkCode && checkOutput){
-        await axios.post(`http://localhost:3000/level/submit`, {
+        await axios.post(`http://backend-woad-sigma.vercel.app/level/submit`, {
           enrollId: course.enrollId,
           level: level.name,
         }).then((response) => {
@@ -111,7 +111,7 @@ async function handleClick(){
         toast("Successfully submitted");
       }
       else if(level.excersice === "null"){
-        await axios.post(`http://localhost:3000/level/submit`, {
+        await axios.post(`http://backend-woad-sigma.vercel.app/level/submit`, {
           enrollId: course.enrollId,
           level: level.name,
         }).then((response) => {

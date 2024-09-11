@@ -24,17 +24,10 @@ const port = process.env.PORT || 3000;
 env.config();
 
 // CORS configuration
-const allowedOrigins = ["http://localhost:5173", "https://interactive-learning-platfrom.vercel.app/"];
-
 app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  credentials: true,
+  origin: 'https://interactive-learning-platfrom.vercel.app', // Replace this with your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Methods allowed
+  credentials: true // Optional, if you are using cookies or authorization headers
 }));
 
 // Bodyparser configuration

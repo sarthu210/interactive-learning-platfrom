@@ -38,7 +38,7 @@ export default function EnrollCours() {
     const handleEnroll = async () => {
         try{
             toast("Successfully Enrolled")
-            await axios.post('https://backend-fy8xpobzy-sarthu102-gmailcoms-projects.vercel.app/course/enroll', data, {withCredentials: true});
+            await axios.post('http://backend-woad-sigma.vercel.app/course/enroll', data, {withCredentials: true});
             dispatch(enroll({isEnroll: true}));
         }
         catch(err){
