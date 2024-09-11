@@ -28,7 +28,7 @@ export default function Login() {
 
     const onSubmit = async (data) => {
         try {
-            const response = await axios.post("http://localhost:3000/auth/login", data, { withCredentials: true });
+            const response = await axios.post("https://backend-fy8xpobzy-sarthu102-gmailcoms-projects.vercel.app/auth/login", data, { withCredentials: true });
             dispatch(login(response.data));
             navigate("/");
             window.location.reload();

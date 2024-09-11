@@ -1,4 +1,3 @@
-import { enroll } from "../../client/src/slices/courseReducer.js";
 import Enroll from "../models/enrolls.js";
 
 async function getEnrolls(req,res){

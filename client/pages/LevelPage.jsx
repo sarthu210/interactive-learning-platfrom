@@ -12,7 +12,7 @@ export default function LevelPage() {
   const dispatch = useDispatch();
 
   useEffect (() => {
-    axios.get(`http://localhost:3000/level/${levelId}`, { withCredentials: true })
+    axios.get(`https://backend-fy8xpobzy-sarthu102-gmailcoms-projects.vercel.app/level/${levelId}`, { withCredentials: true })
     .then((response) => {
       dispatch(setLevel(response.data))
     })

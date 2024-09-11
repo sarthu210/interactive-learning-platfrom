@@ -14,7 +14,7 @@ export default function App() {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    axios.get("http://localhost:3000/auth/user", { withCredentials: true })
+    axios.get("https://backend-fy8xpobzy-sarthu102-gmailcoms-projects.vercel.app/auth/user", { withCredentials: true })
         .then((response) => {
             dispatch(login(response.data)) 
         })
@@ -29,7 +29,7 @@ export default function App() {
 }, []);
 
 React.useEffect(() => {
-  axios.get("http://localhost:3000/course/user-courses", { withCredentials: true })
+  axios.get("https://backend-fy8xpobzy-sarthu102-gmailcoms-projects.vercel.app/course/user-courses", { withCredentials: true })
       .then((response) => {
           dispatch(enroll(response.data))
       })
