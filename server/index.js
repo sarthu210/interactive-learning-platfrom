@@ -5,6 +5,7 @@ import passport from "passport";
 import env from "dotenv"
 import cors from "cors";
 import axios from "axios";
+import MongoStore from "connect-mongo";
 import register from "./routes/register.js";
 import login from "./routes/login.js";
 import logout from "./routes/logout.js";
@@ -36,10 +37,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Session configuration
 app.use(session({
+  store: MongoStore.create({
+    mongoUrl: "mongodb+srv://sarthu102:YUsqohlGrkbdXEFx@cluster0.hu9hdyc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", // MongoDB Atlas URL from your environment variables
+  }),
   secret: "IAMSARTHAKNANDE",
   resave: false,
   saveUninitialized: true,
   cookie: {
+    secure: 'production' === 'production',
     maxAge: 1000 * 60 * 60 * 1,
   }
 }));

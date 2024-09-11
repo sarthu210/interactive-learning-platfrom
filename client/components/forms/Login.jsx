@@ -28,7 +28,7 @@ export default function Login() {
 
     const onSubmit = async (data) => {
         try {
-            const response = await axios.post("http://backend-woad-sigma.vercel.app/auth/login", data, { withCredentials: true });
+            const response = await axios.post("https://backend-woad-sigma.vercel.app/auth/login", data, { withCredentials: true });
             dispatch(login(response.data));
             navigate("/");
             window.location.reload();
