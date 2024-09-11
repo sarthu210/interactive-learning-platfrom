@@ -51,6 +51,10 @@ app.use(session({
   }
 }));
 
+app.get("/" , (req, res) => {
+  res.send("Hello World");
+});
+
 // Passport configuration
 app.use(passport.initialize());
 app.use(passport.session());
