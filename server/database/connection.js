@@ -15,7 +15,7 @@ const mongoURI = process.env.MONGO_URI;
 
 // Create MongoDB connection
 mongoose.connect(mongoURI)
-.then(() => console.log('Connected to MongoDB', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }))
+.then(() => console.log('Connected to MongoDB', mongoURI))
 .catch(err => console.error('Error connecting to MongoDB:', err));
 
 // Export the mongoose object to be used in other modules
