@@ -1,0 +1,20 @@
+{
+    "version": 2,
+    "name": "my-fullstack-app",
+    "builds": [
+      {
+        "src": "client/package.json",
+        "use": "@vercel/static-build",
+        "config": { "distDir": "client/build" }
+      },
+      {
+        "src": "server/index.js",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/server/index.js" },
+      { "src": "/(.*)", "dest": "/client/$1" }
+    ]
+  }
+  
