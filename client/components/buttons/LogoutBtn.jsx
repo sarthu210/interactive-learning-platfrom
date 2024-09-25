@@ -14,7 +14,7 @@ export default function UserLogout() {
   const logout = async () => {
     try {
       // Send a request to the server to end the session
-      await axios.post("https://backend-woad-sigma.vercel.app/auth/logout", {}, { withCredentials: true });
+      await axios.post("http://localhost:3000/auth/logout", {}, { withCredentials: true });
 
       // Dispatch the logout action
       dispatch(logoutAction());

@@ -25,7 +25,7 @@ export default function Register() {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post('https://backend-woad-sigma.vercel.app/auth/register', data, { withCredentials: true });
+      const response = await axios.post('http://localhost:3000/auth/register', data, { withCredentials: true });
       dispatch(login(response.data));
       navigate('/');
     } catch (error) {
