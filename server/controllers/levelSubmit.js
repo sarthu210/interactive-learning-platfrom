@@ -14,11 +14,11 @@ async function levelSubmit(req, res) {
             }
             else if(level === "level-2"){
                 enroll.Level2 = true;
-                enroll.progress = 2;
+                enroll.progress = 3;
             }
             else if(level === "level-3"){
                 enroll.Level3 = true;
-                enroll.progress = 3;
+                enroll.progress = 5;
             }
             
             await enroll.save();

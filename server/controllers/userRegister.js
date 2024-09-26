@@ -6,8 +6,16 @@ const saltRounds = 11;
 
 async function userRegister(req, res, next) {
     const password = req.body.password;
-
+    
     try {
+        const email = req.body.email;
+
+        const findUser = await User.findOne({ email });
+
+        if (findUser) {
+            console.error('User already exists');
+            return res.status(400).json({ error: 'User already exists' });
+        }
         // Hash the password
         const hash = await bcrypt.hash(password, saltRounds);
 
@@ -16,6 +24,7 @@ async function userRegister(req, res, next) {
             ...req.body,
             password: hash
         });
+        
 
         // Log in the user
         req.login(user, (err) => {
@@ -27,7 +36,7 @@ async function userRegister(req, res, next) {
         });
     } catch (error) {
         console.error('Error creating user:', error);
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(500).json({ error: 'Unable To Login' });
     }
 }
 

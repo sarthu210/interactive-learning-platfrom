@@ -16,7 +16,10 @@ async function getEnrolls(req,res){
                     Total_Levels: firstEnroll.Total_Levels,
                     Level1 : firstEnroll.Level1,
                     Level2 : firstEnroll.Level2,
-                    Level3 : firstEnroll.Level3
+                    Level3 : firstEnroll.Level3,
+                    Quize1 : firstEnroll.Quize1,
+                    Quize2 : firstEnroll.Quize2,
+                    Quize3 : firstEnroll.Quize3
                 });
             }
         }

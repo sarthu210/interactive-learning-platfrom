@@ -13,6 +13,7 @@ import getEnrollInfo from "./routes/getEnrollInfo.js"
 import levelSubmit from "./routes/levelSubmit.js";
 import getLevels from "./routes/getLevels.js"
 import quize from "./routes/quize.js";
+import quizeSubmit from "./routes/quizeSubmit.js"
 import "./database/connection.js";
 import "./middleware/passport.js";
 
@@ -65,6 +66,7 @@ app.use('/auth', user);
 app.use('/course', enroll);
 app.use('/course', getEnrollInfo);
 app.use('/level', levelSubmit);
+app.use('/quize', quizeSubmit);
 app.use('/level', getLevels);
 app.use('/api', quize);
 

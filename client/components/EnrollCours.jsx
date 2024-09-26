@@ -7,7 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { enroll } from '../src/slices/courseReducer';
 import { useNavigate } from 'react-router-dom';
 import { color } from 'framer-motion';
-import { round } from 'lodash';
+import { floor, isInteger, round } from 'lodash';
 
 export default function EnrollCours() {
     const navigate = useNavigate();
@@ -55,7 +55,7 @@ export default function EnrollCours() {
                 <p className='font-semibold text-gray-600 text-sm'>Coding</p>
                 <p className='text-2xl text-gray-800'>Basic JAVA</p>
                 <p className='text-gray-400'>History, Data types, Condtional Statments, loops</p>
-                {isAuthenticated ? <ProgressBar className='mt-5' maxCompleted={90} animateOnRender='true' bgColor='black' completed={((progress*90)/3)}></ProgressBar> : null}
+                {isAuthenticated ? <ProgressBar className='mt-5' maxCompleted={90} animateOnRender='true' bgColor='black' completed={Math.round((progress*100)/6)}></ProgressBar> : null}
             </div>
             
             { loading || isEnroll || !isAuthenticated ? null : 
