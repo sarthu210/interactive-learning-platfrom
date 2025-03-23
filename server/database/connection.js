@@ -1,22 +1,17 @@
-import { config as dotenvConfig } from 'dotenv';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
+import env from "dotenv"
 
-// Get the directory path of the current module
-const __dirname = dirname(fileURLToPath(import.meta.url));
+env.config();
 
-// Load environment variables from .env file in the config folder
-const envPath = join(__dirname, '..', '.env');
-dotenvConfig({ path: envPath });
+async function dbConnector() {
 
-// MongoDB connection URI
-const mongoURI = process.env.MONGO_URI;
+    try {
+        const connect = await mongoose.connect(process.env.MONGODB_URL);
+        console.log("Database Connected Succesfuly!", connect.connection.host);
+    } catch (error) {
+        console.log("Error Occured During Connection of Database", error);
+    }
+    
+}
 
-// Create MongoDB connection
-mongoose.connect(mongoURI)
-.then(() => console.log('Connected to MongoDB', mongoURI))
-.catch(err => console.error('Error connecting to MongoDB:', err));
-
-// Export the mongoose object to be used in other modules
-export default mongoose;
+export default dbConnector;

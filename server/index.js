@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import session from "express-session";
 import passport from "passport";
 import cors from "cors";
-import axios from "axios";
+import env from "dotenv";
 import register from "./routes/register.js";
 import login from "./routes/login.js";
 import logout from "./routes/logout.js";
@@ -14,15 +14,16 @@ import levelSubmit from "./routes/levelSubmit.js";
 import getLevels from "./routes/getLevels.js"
 import quize from "./routes/quize.js";
 import quizeSubmit from "./routes/quizeSubmit.js"
-import "./database/connection.js";
 import "./middleware/passport.js";
+import dbConnector from "./database/connection.js";
 
-
+dbConnector();
 const app = express();
 const port = 3000;
 
+env.config();
 // CORS configuration
-const allowedOrigin = "http://localhost:5173"; // Set your Vercel app URL
+const allowedOrigin = "http://localhost:5173";
 
 app.use(cors({
   origin: allowedOrigin,
